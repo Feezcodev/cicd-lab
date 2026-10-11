@@ -1,69 +1,163 @@
-# CI/CD Lab Starter
 
-A small Express and TypeScript app for the CI/CD Crash Course. Use this starting point to follow along with automated testing, GitHub Actions, and deployment to Render.
+# CI/CD Lab — Automated Testing & Deployment
 
-The starter includes a home page, a health endpoint, and a passing health endpoint test. You will add the combined `verify` script, GitHub Actions workflow, and version endpoint during the course.
+A hands-on DevOps project focused on building a reliable CI/CD pipeline for a Node.js and TypeScript application using automated testing, GitHub Actions, and cloud deployment.
 
-## Requirements
+This project demonstrates my practical learning journey in **Continuous Integration, Continuous Delivery, automation, application testing, and deployment workflows**.
+
+The goal is to build a repeatable pipeline that validates application changes before they are deployed, helping improve software quality and release reliability.
+
+## Project Overview
+
+The CI/CD Lab is an Express.js and TypeScript application that serves as the foundation for implementing an automated software delivery pipeline.
+
+I am extending this project step by step to practise real-world DevOps workflows, from local development and automated testing to continuous integration and cloud deployment.
+
+## Tech Stack
+
+- **Application:** Node.js 24, Express.js, TypeScript
+- **Package Management:** npm
+- **Version Control:** Git and GitHub
+- **Testing:** Automated health endpoint tests
+- **CI/CD:** GitHub Actions (implementation in progress)
+- **Deployment:** Render (planned as part of the lab)
+- **Build & Validation:** TypeScript type checking and compilation
+
+## Current Features
+
+- Express.js application with a home page.
+- Health check endpoint for basic application health verification.
+- Automated test for the health endpoint.
+- TypeScript type checking without generating build output.
+- Production build process that compiles the application into `dist`.
+- Separate development and production start commands.
+
+## Getting Started
+
+### Prerequisites
+
+Install the following tools before running the project:
 
 - Node.js 24 and npm
 - Git
-- GitHub and Render accounts for the deployment sections
+- A GitHub account
 
-## Get started
+A Render account will be needed for the deployment stage.
 
-Clone the starter into a new folder:
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/bradtraversy/cicd-lab-starter.git cicd-lab
+git clone https://github.com/Feezcodev/cicd-lab.git
 cd cicd-lab
+```
+
+### 2. Install Dependencies
+
+```bash
 npm ci
 ```
 
-Start the development server:
+### 3. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). The [health endpoint](http://localhost:3000/api/health) returns HTTP 200 with:
+The application runs locally on port `3000` by default.
+
+Open the following endpoints in your browser:
+
+- Home page: http://localhost:3000
+- Health check: http://localhost:3000/api/health
+
+Expected health check response:
 
 ```json
-{"status":"ok"}
+{
+  "status": "ok"
+}
 ```
 
-Stop the server with Ctrl+C.
+Stop the development server with `Ctrl + C`.
 
-## Scripts
+## Available Commands
 
-- `npm run dev`: start the development server with automatic restarts.
-- `npm run typecheck`: check TypeScript without generating output.
-- `npm test`: run the health endpoint test. The test starts and stops its own server.
-- `npm run build`: compile the app into `dist`.
-- `npm start`: run the compiled app after building it.
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run typecheck` | Check TypeScript types |
+| `npm test` | Run automated tests |
+| `npm run build` | Compile the application |
+| `npm start` | Start the compiled application |
 
-## Start your own repository
+## DevOps Implementation Roadmap
 
-From inside your newly cloned `cicd-lab` folder, remove the starter's Git history and remote connection, then initialize your own repository. This preserves the app files.
+I am using this project to build and demonstrate practical experience with the following workflows.
 
-These commands use Bash or Zsh. On Windows, use Git Bash.
+### Phase 1 — Application Validation
 
-```bash
-rm -rf .git
-git init -b main
-git add .
-git commit -m "feat: add CI/CD lab starter"
-```
+- Run TypeScript type checking.
+- Execute automated tests.
+- Build the application for production.
+- Identify failures before deployment.
 
-Create an empty `cicd-lab` repository on GitHub without a README, license, or gitignore. Replace `YOUR_USERNAME` below with your GitHub username:
+### Phase 2 — CI/CD with GitHub Actions
 
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/cicd-lab.git
-git push -u origin main
-```
+- Create a GitHub Actions workflow.
+- Trigger pipeline execution on code pushes and pull requests.
+- Install dependencies using the committed lockfile.
+- Run verification checks and automated tests.
+- Build the application and fail the workflow when required checks fail.
 
-Continue with the course to add verification and deployment. Keep `package-lock.json` committed; dependencies, build output, and environment files are excluded by `.gitignore`.
+### Phase 3 — Application Versioning
 
-## Configuration
+- Implement a version endpoint.
+- Expose application version information for verification.
+- Validate the running application after deployment.
 
-The server uses port `3000` unless `PORT` is set. The home page displays `APP_VERSION`, defaulting to `development`. Neither variable is required to run the starter locally.
+### Phase 4 — Cloud Deployment
+
+- Configure the application for deployment on Render.
+- Deploy the application from the GitHub repository.
+- Configure required environment variables.
+- Verify the deployed application using its health endpoint.
+- Practise troubleshooting failed builds and deployment issues.
+
+*Implementation status: This roadmap describes the planned learning objectives. Individual phases will be marked complete as they are implemented and tested.*
+
+## What I'm Learning
+
+Through this project, I am developing practical skills in:
+
+- CI/CD pipeline design and implementation.
+- Automated testing and build validation.
+- Git-based version control workflows.
+- TypeScript application build processes.
+- Environment variable configuration.
+- Cloud application deployment and health verification.
+- Troubleshooting failures across the software delivery lifecycle.
+
+## Future Improvements
+
+As the project evolves, I plan to explore:
+
+- Pull request quality gates.
+- Build artifact management.
+- Deployment verification and rollback strategies.
+- Containerization with Docker.
+- Infrastructure automation with Terraform.
+- Security scanning within CI/CD pipelines.
+
+## Repository
+
+**GitHub:** https://github.com/Feezcodev/cicd-lab
+
+## About Me
+
+I am building my career in DevOps, Cloud Engineering, and Platform Engineering through hands-on projects focused on automation, infrastructure, CI/CD, and reliable application delivery.
+
+I believe in learning by building, documenting what I implement, and continuously improving my engineering skills.
+
+**One project. One skill. One opportunity at a time.**
+
+Connect with me on GitHub: https://github.com/Feezcodev
